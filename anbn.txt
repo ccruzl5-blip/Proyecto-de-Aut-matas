@@ -1,0 +1,29 @@
+# MT que acepta el lenguaje { a^n b^n : n >= 0 }  (ej: "", ab, aabb, aaabbb)
+# Idea: marca una 'a' con X, busca la primera 'b' y la marca con Y, regresa
+# y repite. Al final verifica que no sobre ninguna 'a' ni 'b'.
+Estados( q0, q1, q2, q3, qa, qr )
+Inicial( q0 )
+Ha( qa )
+He( qr )
+Alfabeto( a, b, X, Y, _ )
+
+# q0: busca la siguiente 'a' sin marcar
+MT (q0, a) = (q1, X, D)
+MT (q0, Y) = (q3, Y, D)
+MT (q0, _) = (qa, _, N)
+MT (q0, b) = (qr, b, N)
+
+# q1: avanza a la derecha hasta encontrar una 'b' sin marcar
+MT (q1, a) = (q1, a, D)
+MT (q1, Y) = (q1, Y, D)
+MT (q1, b) = (q2, Y, I)
+
+# q2: regresa a la izquierda hasta la ultima X
+MT (q2, a) = (q2, a, I)
+MT (q2, Y) = (q2, Y, I)
+MT (q2, X) = (q0, X, D)
+
+# q3: ya no hay 'a'; verifica que solo queden Y hasta el blanco
+MT (q3, Y) = (q3, Y, D)
+MT (q3, _) = (qa, _, N)
+MT (q3, b) = (qr, b, N)
