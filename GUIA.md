@@ -16,7 +16,7 @@
 ## Opción A: desde VSCode
 1. `Archivo > Abrir carpeta` y elige la carpeta del proyecto.
 2. Abre `Main.java`.
-3. Pulsa **Run** (▶) sobre `public static void main`.
+3. Pulsa **Run**  sobre `public static void main`.
 4. En la terminal integrada escribe la ruta del archivo, por ejemplo `anbn.txt`
    (o la ruta completa, como `C:\proyecto\anbn.txt`).
 
