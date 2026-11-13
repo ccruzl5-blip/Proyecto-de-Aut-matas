@@ -2,9 +2,11 @@ import java.io.IOException;
 import java.util.Scanner;
 
 /**
- * Programa principal: simulador de Maquina de Turing por consola.
+ * Programa principal: simulador de Maquina de Turing por consola Proyecto Final Autómatas.
  *
- * Flujo:
+ * El flujo es:
+ * 
+ * 
  *   1. Nos pide la ruta del archivo con la definicion de la MT y la carga.
  *   2. Nos solicita una cadena para la cinta (valida los simbolos). Termina con ENTER.
  *   3. Simula y muestra ACEPTACION o NO ACEPTACION.

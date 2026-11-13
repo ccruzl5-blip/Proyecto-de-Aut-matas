@@ -9,9 +9,9 @@ import java.util.regex.Pattern;
 
 /**
  * Lee un archivo de texto con la definicion de una MT y construye un objeto
- * {@link MaquinaTuring}. Valida la sintaxis y la coherencia de la definicion.
- *
- * Formato del archivo (una instruccion por linea):
+ * {@link MaquinaTuring}. 
+ 
+ * Formato del archivo:
  *   Estados( q0, q1, qa, qr )
  *   Inicial( q0 )
  *   Ha( qa )
@@ -42,7 +42,7 @@ public class LectorDefinicion {
     public static MaquinaTuring cargar(String ruta) throws IOException {
         List<String> lineas = Files.readAllLines(Paths.get(ruta), StandardCharsets.UTF_8);
         MaquinaTuring mt = new MaquinaTuring();
-        mt.alfabeto.add(MaquinaTuring.BLANCO); // el blanco siempre pertenece a la cinta
+        mt.alfabeto.add(MaquinaTuring.BLANCO); 
 
         // Las transiciones se guardan aparte porque pueden aparecer antes que
         // Estados/Alfabeto; se validan al final, cuando todo ya esta cargado.
